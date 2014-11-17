@@ -14,6 +14,8 @@ screen::screen(void)
 	height=0;
 	image = new unsigned char[0];// pointeur vide
 }
+
+
 screen::screen(const screen& model)
 {
 	width = model.getwidth();
@@ -21,8 +23,10 @@ screen::screen(const screen& model)
 	printf("%d %d\n",width,height);
 	image = new unsigned char[3 *width*height];
 	memcpy(image, model.getimage(), 3 *width*height*sizeof(u_char));
-}	
-unsigned char* screen::getimage(void)
+}
+
+	
+unsigned char* screen::getimage(void) const
 {
 	return image;
 }
