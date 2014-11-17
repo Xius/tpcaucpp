@@ -5,6 +5,12 @@
 #include <string.h>
 
 
+//create struct for image
+typedef struct
+{
+	int width, height;
+	u_char* pixel;
+} screen;
 
 //============================================================================
 //                           Function declarations
@@ -35,6 +41,7 @@ int main(int argc, char* argv[])
   //--------------------------------------------------------------------------
   // Read file "gargouille.ppm" into image (width and height)
   //--------------------------------------------------------------------------
+  screen image;
   u_char* image = NULL;
   int width;
   int height;
