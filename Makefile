@@ -1,8 +1,8 @@
 all : ppm
-ppm : ppm2.c fonction.c fonction.o
-	gcc -o ppm ppm2.c fonction.o
-fonction.o: fonction.h fonction.c 
-	gcc  -o fonction.o fonction.c -c
+ppm : ppm2.cpp fonction.cpp fonction.o
+	g++ -o ppm ppm2.cpp fonction.o
+fonction.o: fonction.h fonction.cpp 
+	g++  -o fonction.o fonction.cpp -c
 clean:
 	rm*.o
 
