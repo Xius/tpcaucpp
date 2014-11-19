@@ -32,6 +32,27 @@ int main(int argc, char* argv[])
 
 	screen image_bw = image_bw;
 
+  // Desaturate image_bw
+	
+	image_bw.ppm_desaturate();
+
+  // Write the desaturated image into "gargouille_BW.ppm"
+
+	image_bw.ppm_write_to_file("gargouille_BW.ppm");
+
+//--------------------------------------------------------------------------
+  // Create a resized copy of the image and
+  // write it into "gargouille_small.ppm"
+//--------------------------------------------------------------------------
+  // Copy image into image_small
+	screen image_small = screen(image);
+
+  // Shrink image_small size 2-fold
+	image_small.ppm_shrink(2);
+
+  // Write the desaturated image into "gargouille_small.ppm"
+	image_small.ppm_write_to_file("gargouille_small.ppm");
+
 
 
 	return 0;
